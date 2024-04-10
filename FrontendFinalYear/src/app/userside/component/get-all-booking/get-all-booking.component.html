@@ -8,12 +8,10 @@
             <tr>
                 <th>Book Id</th>
                 <th>Customer EmailId</th>
-                <th>Car Model Name</th>
+                <th>Doctor Name</th>
                 <th>Slot No</th>
-                <th>Test Drive Booking Date</th>
+                <th>Appoinment Date</th>
                 <th>Booking Date</th>
-                <th>Staff Name</th>
-                <th>Staff Mobile Number</th>
                 <th>Status</th>
             </tr>
         </thead>
@@ -25,10 +23,8 @@
                 <td>{{booking.slotNo}}</td>
                 <td>{{booking.date}}</td>
                 <td>{{booking.bookingDate}}</td>
-                <td>{{booking.staffName}}</td>
-                <td>{{booking.staffMobileNumber}}</td>
                 <td *ngIf="booking.status">Completed</td>
-                <td *ngIf="!booking.status">Yet to testdrive</td>
+                <td *ngIf="!booking.status">Yet to visit</td>
             </tr>
         </tbody>
     </table>

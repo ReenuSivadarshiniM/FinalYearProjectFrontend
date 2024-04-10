@@ -3,19 +3,18 @@
 
 
 
-<h1>Rating table Based On Car Model</h1>
+<!-- <h1>Rating table Based On  Doctor Name</h1>
   <label for="carModel">Enter Car Model</label>
   <input type="text" id="carModel" name="carModel" [(ngModel)]="carModel" ondblclick="window.location.reload();"><br>
-<button (click)="getRatingByCarModel(carModel)"> Enter</button>
+<button (click)="getRatingByCarModel(carModel)"> Enter</button> -->
 
 
-  <table *ngIf="ratingOfCarModel.length>0">
+  <table *ngIf="(ratingOfCarModel.length)<0">
           <thead>
            <th>Customer EmailId</th>
-           <!-- <th>Rating Id</th> -->
            <th>Rating Stars</th>
            <th>Comments</th>
-           <th>Car Model Name</th>
+           <th>Doctor Name</th>
            </thead>
           <tbody>
             <tr *ngFor="let ratin of ratingOfCarModel" >
@@ -30,7 +29,6 @@
           </tbody>
       </table>
 
-<br>
 
 
 <!-- <h1>Rating table Based On customer EmailId </h1>
@@ -65,7 +63,7 @@
 
 <br><br>
 
-<h1>Rating for all model</h1>
+<h1>Rating for all Doctor</h1>
   <label for="min">Minimum Rating</label>
   <input type="numbers" id="min" name="min" [(ngModel)]="min"><br>
 
@@ -89,7 +87,7 @@
          <th>Customer EmailId</th>
          <th>Rating Stars</th>
          <th>Comments</th>
-         <th>Car Model Name</th>
+         <th>Doctor Name</th>
          <!-- <td>Delete Rating</td> -->
 
          <!-- <td>Customer EmailId</td>
@@ -124,7 +122,7 @@
                <!-- <td>Rating Id</td> -->
                <td>Rating Stars</td>
                <td>Comments</td>
-               <td>Car Model Name</td>
+               <td>Doctor Name</td>
                </thead>
               <tbody>
                 <tr *ngFor="let ratin of ratingFiltered|filter:searchBox" >

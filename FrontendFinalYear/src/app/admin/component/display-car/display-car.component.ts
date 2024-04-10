@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ComponentFactoryResolver } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';

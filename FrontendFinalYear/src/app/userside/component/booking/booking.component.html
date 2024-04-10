@@ -6,7 +6,7 @@
         <div *ngIf="errorMessage" class="alert alert-danger">
             <h3>{{errorMessage}}</h3>
         </div>
-        <div style="display: flex;justify-content: center;"><h2><i>Book your Test Drive Car Now!</i></h2></div>
+        <div style="display: flex;justify-content: center;"><h2><i>Book your Appoinment Now!</i></h2></div>
         <form action="">
             <table>
                 <!-- <tr>
@@ -22,7 +22,7 @@
                     </div>
                 </th> -->
                 <tr>
-                    <td><label for="">Car Model Name</label></td>
+                    <td><label for="">Doctor Name </label></td>
                     <td><input type="text" name="modelname" id="modelname" [value]="modelName" readonly></td>
                 </tr>
                 <!-- <th colspan="2">
@@ -49,7 +49,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><label for="">Car Test Drive Booking Date</label></td>
+                    <td><label for="">Appoinment Date</label></td>
                     <td><input type="date" name="date" id="date" [(ngModel)]="newBooking.date" #date="ngModel" required>
                     </td>
                 </tr>

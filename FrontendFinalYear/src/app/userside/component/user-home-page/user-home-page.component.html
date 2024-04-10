@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row"  >
             <div>
-                <input type="text" id="search" name="search" [(ngModel)]="query" placeholder="Search for Cars here"><br><br>
+                <input type="text" id="search" name="search" [(ngModel)]="query" placeholder="Search for Doctors here"><br><br>
             </div>
             <div class="col-sm-12">
                 <div *ngFor="let c of car | filter:query" class="card col-sm-4">
@@ -36,9 +36,7 @@
 
         </div>
 
-    </div>
-    <div style="margin-left: 40%; margin-bottom: 3%;"><h2>Overall Ratings</h2></div>
-    <div class="chart">
+    
 
     </div>
     <!-- <div>

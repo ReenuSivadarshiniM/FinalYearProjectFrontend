@@ -1,0 +1,24 @@
+<app-userheading></app-userheading>
+<div>
+    <div *ngIf="message" class="alert alert-success">           
+        <p>{{message}}</p>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        <p> {{errorMessage}}</p>
+     </div>   
+<form>
+    <!-- <label for ="email">Customer Mail</label>
+    <input type="email" id="customerEmailId" name="customerEmailId" [(ngModel)]="newRating.customerEmailId"><br> -->
+
+    <label for="stars">Rating Stars</label>
+    <input type="number" id="ratingStars" name="ratingStars" [(ngModel)]="newRating.ratingStars" pattern="[1-5]{1}" required><br>
+
+    <label for="comments">Comments</label>
+    <input type="text" id="comments" name="comments" [(ngModel)]="newRating.comments"><br>
+
+    <label for="carModel">Car Model Name</label>
+    <input type="text" id="carModelName" name="carModelName" [value]="modelName" readonly><br>
+
+    <button type="submit" (click)="addNewRating()" >Add Rating</button>
+</form>
+</div>

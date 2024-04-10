@@ -1,0 +1,37 @@
+<body>\
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1><b>STAFF LOGIN</b></h1>
+    <div class="form-group">
+        <form (ngSubmit)="login()" #loginForm="ngForm">
+            <div>
+                <label for="userName">Email Id: </label>
+            <input type="text" name="userName" [(ngModel)]="staffEmail"  placeholder="Email"  #emailRef="ngModel" pattern="[A-Za-z0-9. _]{3,}[@A-Za-z]{3,}.[a-z]{2,3}"required><br>
+            <div *ngIf="emailRef.invalid && (emailRef.touched || emailRef.dirty)">
+                <p *ngIf="emailRef.errors?.['required']" class="text-danger">Email is required ,but it is blank</p> 
+                <p *ngIf="emailRef.errors?.['pattern']" class="text-danger">Email is not valid (e.g.abcd&#64;gmail.com)   </p>
+                </div>
+        <label for="password">Password: </label>
+            <input type="password" name="password" [(ngModel)]="phoneNumber"  placeholder="Password" #passwordRef="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#&%$_]).{8,}" required><br>
+            <br>
+            <div *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty)">
+                <p *ngIf="passwordRef.errors?.['required']" class="text-danger">Password is required ,but it is blank</p> 
+                <p *ngIf="passwordRef.errors?.['pattern']" class="text-danger">Must contain 10 Numbers </p>
+                </div>
+            <button type="submit" >Login</button><br>
+            <!-- <button type="submit" (click)="get(userName)">Login</button> -->
+        </div>
+        <br>
+        <br>
+            <div *ngIf="message"  class="btn btn-success" >
+                <p>{{message}}</p>
+            </div>
+            <div *ngIf="errorMessage"  class="btn btn-warning" >
+                <p>{{errorMessage}}</p>
+            </div>
+          </form>
+        </div>
+    </body>

@@ -1,0 +1,140 @@
+<app-userheading></app-userheading>
+<h1 *ngIf="rating.length <1">No Ratings Found</h1>
+
+
+
+<h1>Rating table Based On Car Model</h1>
+  <label for="carModel">Enter Car Model</label>
+  <input type="text" id="carModel" name="carModel" [(ngModel)]="carModel" ondblclick="window.location.reload();"><br>
+<button (click)="getRatingByCarModel(carModel)"> Enter</button>
+
+
+  <table *ngIf="ratingOfCarModel.length>0">
+          <thead>
+           <th>Customer EmailId</th>
+           <!-- <th>Rating Id</th> -->
+           <th>Rating Stars</th>
+           <th>Comments</th>
+           <th>Car Model Name</th>
+           </thead>
+          <tbody>
+            <tr *ngFor="let ratin of ratingOfCarModel" >
+            <td>{{ratin.customerEmailId}}</td>
+            <!-- <td>{{ratin.ratingId}}</td> -->
+            <td>{{ratin.ratingStars}}</td>
+            <td>{{ratin.comments}}</td>
+            <td>{{ratin.carModelName}}</td>
+            <!-- <td> <button (click)="deleteRatingById(ratin.ratingId)" class="btn btn-danger">Delete</button></td> -->
+
+              </tr>
+          </tbody>
+      </table>
+
+<br>
+
+
+<!-- <h1>Rating table Based On customer EmailId </h1>
+  <label for="emailId">Enter Email Id</label>
+  <input type="text" id="emailId" name="emailId" [(ngModel)]="emailId" ondblclick="window.location.reload();"><br>
+<button (click)="getRatingByCustomerMail(emailId)"> Enter</button>
+
+
+  <table *ngIf="ratingOfCustomer.length>0">
+          <thead>
+           <th>Customer EmailId</th>
+            <th>Rating Id</th>
+           <th>Rating Stars</th>
+           <th>Comments</th>
+           <th>Car Model Name</th>
+           
+           </thead>
+          <tbody>
+            <tr *ngFor="let ratin of ratingOfCustomer" >
+            <td>{{ratin.customerEmailId}}</td>
+             <td>{{ratin.ratingId}}</td> 
+            <td>{{ratin.ratingStars}}</td>
+            <td>{{ratin.comments}}</td>
+            <td>{{ratin.carModelName}}</td>
+             <td> <button (click)="deleteRatingById(ratin.ratingId)" class="btn btn-danger">Delete</button></td>
+              </tr>
+          </tbody>
+      </table>
+
+<br> -->
+
+
+<br><br>
+
+<h1>Rating for all model</h1>
+  <label for="min">Minimum Rating</label>
+  <input type="numbers" id="min" name="min" [(ngModel)]="min"><br>
+
+  <label for="min">Maximum Rating</label>
+  <input type="numbers" id="min" name="min" [(ngModel)]="max"><br>
+<button (click)="getRatingMinMax(min,max)">Enter</button>
+<button (click)="toggleFilter()">Back</button>
+
+<div>
+  <br>
+
+  <input type="text"  [(ngModel)]="searchBox"  class="search"  name="search" id="search" placeholder="search">
+  </div>
+
+  <br>
+<div *ngIf="toggle">
+<table *ngIf="rating.length>0">
+        <thead>
+
+          <!-- <th>Rating Id</th> -->
+         <th>Customer EmailId</th>
+         <th>Rating Stars</th>
+         <th>Comments</th>
+         <th>Car Model Name</th>
+         <!-- <td>Delete Rating</td> -->
+
+         <!-- <td>Customer EmailId</td>
+         <td>Rating Id</td>
+         <td>Rating Stars</td>
+         <td>Comments</td>
+         <td>Car Model Name</td>
+         <td>Delete Rating</td> -->
+
+         </thead>
+        <tbody>
+          <tr *ngFor="let ratin of rating|filter:searchBox" >
+            <!-- <td>{{ratin.ratingId}}</td> -->
+          <td>{{ratin.customerEmailId}}</td>
+          <td>{{ratin.ratingStars}}</td>
+          <td>{{ratin.comments}}</td>
+          <td>{{ratin.carModelName}}</td>
+          <!-- <td> <button (click)="deleteRatingById(ratin.ratingId)" class="btn btn-danger">Delete</button></td> -->
+
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+
+
+    <div *ngIf="!toggle">
+      <h3>Filtered Rating</h3>
+      <table *ngIf="rating.length>0">
+              <thead>
+               <td>Customer EmailId</td>
+               <!-- <td>Rating Id</td> -->
+               <td>Rating Stars</td>
+               <td>Comments</td>
+               <td>Car Model Name</td>
+               </thead>
+              <tbody>
+                <tr *ngFor="let ratin of ratingFiltered|filter:searchBox" >
+                <td>{{ratin.customerEmailId}}</td>
+                <!-- <td>{{ratin.ratingId}}</td> -->
+                <td>{{ratin.ratingStars}}</td>
+                <td>{{ratin.comments}}</td>
+                <td>{{ratin.carModelName}}</td>
+
+                  </tr>
+              </tbody>
+          </table>
+          </div>

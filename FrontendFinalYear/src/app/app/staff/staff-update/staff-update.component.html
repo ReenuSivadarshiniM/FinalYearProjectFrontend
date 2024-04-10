@@ -1,0 +1,49 @@
+<body>
+    <div>
+    <nav>
+        <ul>
+            <li>
+                <a href="http://localhost:4200/staff-home">Home</a>
+            </li>
+            <li>
+                <a href="http://localhost:4200/staff-profile">Profile</a>
+            </li> 
+            <li>
+                <a href="http://localhost:4200/stafflogin">Logout</a> 
+             </li>
+        </ul>
+    </nav>
+<div>
+    <br>
+    <br>
+    <br>
+<div>
+    <body>
+    <form>
+        <h3>Update Staff:</h3>
+        <div *ngIf="message" class="alert alert-success">
+            <p> {{message}}</p>
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            <p> {{errorMessage}}</p>
+        </div>
+        
+        <label for="name" >Staff Name:</label>
+        <input type="text" name="name" id="name" [(ngModel)]="staff.staffName"><br>
+        <label for="mobile" >Phone Number:</label>
+        <input type="text" name="Phone Number" id="mobileNumber" class="form-control" [(ngModel)]="staff.phoneNumber"
+        #mobileNumberRef="ngModel" pattern="[0-9]{10}" required>
+    <div *ngIf="mobileNumberRef.invalid && (mobileNumberRef.touched || mobileNumberRef.dirty)">
+        <p *ngIf="mobileNumberRef.errors?.['required']" class="text-danger">Phone Number is required ,but it is
+            blank</p>
+        <p *ngIf="mobileNumberRef.errors?.['pattern']" class="text-danger">Phone Number should be of length 10</p>
+    </div>        <label for="email" >Staff Email:</label>
+        <input type="email" name="email" id="email" class="form-control" [(ngModel)]="staff.staffEmail" #emailRef="ngModel"
+        pattern="[A-Za-z0-9._]{3,}[@A-Za-z]{3,}.[a-z]{2,3}" required>
+    <div *ngIf="emailRef.invalid && (emailRef.touched || emailRef.dirty)">
+        <p *ngIf="emailRef.errors?.['required']" class="text-danger">Email is required ,but it is blank</p>
+        <p *ngIf="emailRef.errors?.['pattern']" class="text-danger">Email is not valid </p>
+    </div>        <button (click)="updateStaff()" class="btn btn-success" type="submit" >Update Staff</button> 
+
+    </form>
+</body>

@@ -1,0 +1,55 @@
+<!-- <app-userheading></app-userheading> -->
+<div>
+    <nav>
+        <ul>
+            <li>
+                <a href="http://localhost:4200/staff-home">Home</a>
+            </li>
+            <li>
+                <a href="http://localhost:4200/staff-profile">Profile</a>
+            </li> 
+            <li>
+                <a href="http://localhost:4200/stafflogin">Logout</a> 
+             </li>
+        </ul>
+    </nav>
+<div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3><b>STAFF DETAILS</b></h3>
+            <table>
+                <tr>
+                    <td><b>Staff Name:</b></td>
+                    <td>{{staff.staffName}}</td>
+                </tr>
+                <br>
+                <tr>
+                    <td><b>Phone Number:</b></td>
+                    <td>{{staff.phoneNumber}}</td>
+                </tr>
+                <br>
+                <tr>
+                    <td><b>Staff Email:</b></td>
+                    <td>{{staff.staffEmail}}</td>
+                </tr>
+            </table>
+            <br>
+            <br>
+                <div class="button">
+                  <button (click)="updateStaff(staff)" class="btn btn-warning" style="margin-left: 2%;">Update</button> &nbsp;
+                  <button (click)="viewMyBookings(staff.staffEmail)" class="btn btn-primary" style="margin-left: 2%;">View my Bookings</button>
+                </div> 
+        </div>
+    </div>
+    <div> 
+
+    </div>
+</div>
+

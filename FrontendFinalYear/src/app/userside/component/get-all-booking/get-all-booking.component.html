@@ -1,0 +1,36 @@
+<body>
+<div *ngIf="message" class="alert alert-success"><h4 >{{message}}</h4></div>
+<div *ngIf="errorMessage" class="alert alert-danger"><h4>{{errorMessage}}</h4></div>
+<div class="bg">
+    <h3 class="alert alert-danger" *ngIf="bookings.length<1">No bookings found</h3>
+    <table *ngIf="bookings.length>0" class="table table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Book Id</th>
+                <th>Customer EmailId</th>
+                <th>Car Model Name</th>
+                <th>Slot No</th>
+                <th>Test Drive Booking Date</th>
+                <th>Booking Date</th>
+                <th>Staff Name</th>
+                <th>Staff Mobile Number</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody class="table-light">
+            <tr *ngFor="let booking of bookings">
+                <td>{{booking.bookId}}</td>
+                <td>{{booking.customerEmailId}}</td>
+                <td>{{booking.carModelName}}</td>
+                <td>{{booking.slotNo}}</td>
+                <td>{{booking.date}}</td>
+                <td>{{booking.bookingDate}}</td>
+                <td>{{booking.staffName}}</td>
+                <td>{{booking.staffMobileNumber}}</td>
+                <td *ngIf="booking.status">Completed</td>
+                <td *ngIf="!booking.status">Yet to testdrive</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>

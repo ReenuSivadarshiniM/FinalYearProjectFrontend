@@ -1,0 +1,31 @@
+<app-header></app-header>
+<body>
+    <p style="padding-top: 1.5%;">{{date}}</p>
+    <h3>Today's Bookings:</h3>
+    <div id="slideshow">
+        <div class="slide-wrapper" *ngFor="let car of showCar;let i = index ">
+            <div class="slide">
+                <h1 class="slide-number">
+                    <p style="font-size: large; font-weight: bold;">{{showCar[i].doctorName}} {{showCar[i].doctorPhoneNo}}</p>
+                    <img class="d-block w-100" [src] = "showCar[i].url" alt="Image">
+                    <p></p> 
+                </h1>
+            </div>
+        </div>
+    </div>
+    <h3>Cars with highest Rating:</h3>
+    <div id="slideshow">
+        <div class="slide-wrapper" *ngFor="let car of showRating;let i = index ">
+            <div class="slide">
+                <h1 class="slide-number">
+                    <p style="font-size: large; font-weight: bold;">{{showRating[i].doctorName}} {{showRating[i].doctorPhoneNo}}</p>
+                    <img class="d-block w-100" [src] = "showRating[i].url" alt="Image">
+                    <p></p> 
+                </h1>
+            </div>
+        </div>
+    </div>
+   
+   
+</body>
+<!-- *ngFor="let c of displayCar" -->

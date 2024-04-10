@@ -1,0 +1,73 @@
+
+/*!* table,tr,td,th{*/
+/*border: 2px black solid;*/
+/*=======*/
+/*table,tr,td,th{*/
+/*!* border: 2px black solid; *!*/
+
+
+
+
+/*table {*/
+/*    width: 100%;*/
+/*    border-collapse: collapse;*/
+/*}*/
+
+
+/*ul {*/
+/*    list-style-type: none;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    overflow: hidden;*/
+/*    border: 1px solid #e7e7e7;*/
+/*    background-color: #f3f3f3;*/
+/*  }*/
+
+/*  li {*/
+/*    float: left;*/
+/*  }*/
+
+/*  #logId{*/
+/*    float: right;*/
+/*  }*/
+/*  li a {*/
+/*    display: block;*/
+/*    color: #666;*/
+/*    text-align: center;*/
+/*    padding: 14px 16px;*/
+/*    text-decoration: none;*/
+/*  }*/
+
+/*  li a:hover:not(.active) {*/
+/*    background-color: #ddd;*/
+/*  }*/
+
+/*  li a.active {*/
+/*    color: white;*/
+/*    background-color: #04AA6D;*/
+/*  } *!*/
+
+  table,td
+{
+    margin-top: 3%;
+    border: 3px solid;
+    border-collapse: collapse;
+    border-style:inset;
+    vertical-align: top;
+    min-width: 300px;
+    height: 40px;
+    justify-items: center;
+    align-items: center;
+}
+#btn{
+    width: 250px;
+    margin-left: 500px;
+    margin-top: 5%;
+}
+.button{
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  margin-top: 2%;
+  margin-left: 21%;
+}

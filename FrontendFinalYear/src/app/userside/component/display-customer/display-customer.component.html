@@ -1,0 +1,31 @@
+<p>display-customer works!</p>
+<div>
+    <h3>Display  Customers details: </h3>
+    <h3 *ngIf="customer.length <1" class="table"> No accounts Found.</h3>
+    <table  >
+        <thead>
+            <tr>
+              
+                <th>Name</th>
+                <th>Mobile Number</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customers of customer">
+              
+                <td>{{customers.customerName}}</td>
+                <td>{{customers.mobileNumber}}</td>
+                <td>{{customers.address}}</td>
+                <td>{{customers.customerEmail}}</td>
+                <td>{{customers.password}}</td>
+                <td><button (click)="deleteCustomer(customers.customerEmail)" class="btn btn-danger">Delete</button></td>  
+                <td><button (click)="updateCustomer(customers)" class="btn btn-warning">Update</button></td> 
+                <!-- <td><button (click)="getCustomerBookings(customers.customerEmail)" class="btn btn-warning">Get</button></td> 
+                <td><button (click)="getCustomerByEmail(customers.customerEmail)" class="btn btn-warning">Get Customer details</button></td>  -->
+            </tr> 
+        </tbody>
+    </table>
+</div>

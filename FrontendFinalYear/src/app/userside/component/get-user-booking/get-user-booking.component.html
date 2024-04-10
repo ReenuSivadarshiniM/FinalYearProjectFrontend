@@ -1,0 +1,51 @@
+<app-userheading></app-userheading>
+<div>
+    <!-- <form action="">
+        <table>
+            <tr>
+                <td><label for="">Mail Id</label></td>
+                <td><input type="email" name="email" id="email" [(ngModel)]="usermail"></td>
+            </tr>
+        </table>
+        <button (click)="getUserBooking()">Submit</button>
+    </form> -->
+</div>
+<div *ngIf="message" class="alert alert-success"><h4 >{{message}}</h4></div>
+<div *ngIf="errorMessage" class="alert alert-danger"><h4>{{errorMessage}}</h4></div>
+<div class="bg">
+    <h3>My bookings</h3>
+    <table *ngIf="bookings.length>0">
+        <thead>
+            <tr>
+                <th>Book Id</th>
+                <th>Customer EmailId</th>
+                <th>Car Model Name</th>
+                <th>Slot No</th>
+                <th>Test Drive Booking Date</th>
+                <th>Booking Date</th>
+                <th>Staff Name</th>
+                <th>Staff Mobile Number</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let booking of bookings">
+                <td>{{booking.bookId}}</td>
+                <td>{{booking.customerEmailId}}</td>
+                <td>{{booking.carModelName}}</td>
+                <td>{{booking.slotNo}}</td>
+                <td>{{booking.date}}</td>
+                <td>{{booking.bookingDate}}</td>
+                <td>{{booking.staffName}}</td>
+                <td>{{booking.staffMobileNumber}}</td>
+                <td *ngIf="booking.status">Completed</td>
+                <td *ngIf="!booking.status">Yet to Testdrive</td>
+                <td><button class="btn btn-danger" (click)="deleteBookingsById(booking.bookId)">Delete</button></td>
+                <td><button class="btn btn-info" (click)="updateBooking(booking)">Update</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

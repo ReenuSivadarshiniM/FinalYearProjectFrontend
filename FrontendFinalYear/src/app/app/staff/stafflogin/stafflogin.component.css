@@ -1,0 +1,63 @@
+
+
+form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+background: white; 
+ border: 1px solid #9ea4e1;
+  border-radius: 2px;
+  }
+  
+  label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  }
+  
+  input[type="text"]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 2px 0;
+  box-sizing:border-box;
+  border: 2px solid black;
+  border-radius: 4px;
+  }
+  input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 2px 0;
+  box-sizing:border-box;
+  border: 2px solid black;
+  border-radius: 4px;
+  }
+  
+  button[type="submit"] {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  display: grid;
+  justify-content: center;
+  
+  }
+  h1 {
+    text-align: center;
+    color: blue; /* Set the color to blue */
+}
+/* Set the background image */
+html,body{
+  background-color: azure;
+}
+
+
+        
+    
+  
+  
+  

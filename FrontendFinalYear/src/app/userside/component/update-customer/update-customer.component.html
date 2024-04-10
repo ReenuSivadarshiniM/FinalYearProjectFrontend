@@ -1,0 +1,55 @@
+<app-userheading></app-userheading>
+<div>
+    <div *ngIf="message" class="alert alert-success">
+        <p> {{message}}</p>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        <p> {{errorMessage}}</p>
+    </div>
+</div>
+<div>
+    <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+        <h3>Update Customer:</h3>
+
+
+        <label for="name" >Name:</label>
+        <input type="text" name="name" id="name" [(ngModel)]="customer.customerName" #nameRef="ngModel" pattern="[A-Za-z ]{3,}" required><br>
+        <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+            <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required ,but it is blank</p>
+
+            <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name should be characters with minimum length of 3.</p>
+        </div>
+        <label for="mobile" >MobileNumber:</label>
+        <input type="number" name="mobile" id="mobile" [(ngModel)]="customer.mobileNumber" #mobileNumberRef="ngModel" pattern="[0-9]{10}"><br>
+        <div *ngIf="mobileNumberRef.invalid && (mobileNumberRef.touched || mobileNumberRef.dirty)">
+            <p *ngIf="mobileNumberRef.errors?.['required']" class="text-danger">MobileNumber is required ,but it is blank</p>
+
+            <p *ngIf="mobileNumberRef.errors?.['pattern']" class="text-danger">MobileNumber should be a 10 digit number </p>
+            </div>
+
+        <label for="address" >Address:</label>
+        <input type="text" name="address" id="address" [(ngModel)]="customer.address" #addressRef="ngModel" pattern="[A-Za-z ]{3,}" required><br>
+        <div *ngIf="addressRef.invalid && (addressRef.touched || addressRef.dirty)">
+            <p *ngIf="addressRef.errors?.['required']" class="text-danger">Address is required ,but it is blank</p>
+
+            <p *ngIf="addressRef.errors?.['pattern']" class="text-danger">Address should be  characters with minimum length of 3. </p>
+        </div>
+
+        <label for="email" >Email:</label>
+        <input type="email" name="email" id="email" [(ngModel)]="customer.customerEmail" #emailRef="ngModel" required pattern="[A-Za-z0-9._]{3,}[@A-Za-z]{3,}.[a-z]{2,3}" disabled><br>
+        <div *ngIf="emailRef.invalid && (emailRef.touched || emailRef.dirty)">
+            <p *ngIf="emailRef.errors?.['required']" class="text-danger">Email is required ,but it is blank</p>
+
+            <p *ngIf="emailRef.errors?.['pattern']" class="text-danger">Email is not valid  (e.g.abcd&#64;gmail.com) </p>
+            </div>
+        <label for="password" >Password:</label>
+        <input type="password" name="password" id="password" [(ngModel)]="customer.password" #passwordRef="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#&%$_]).{8,}" required><br><br>
+        <div *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty)">
+            <p *ngIf="passwordRef.errors?.['required']" class="text-danger">Password is required ,but it is blank</p>
+
+            <p *ngIf="passwordRef.errors?.['pattern']" class="text-danger">Must contain at least one  number and one uppercase and lowercase letter and one special characters, and at least 8 or more characters  </p>
+            </div>
+        <!-- <button (click)="updateCustomer(customer)" class="btn btn-success" type="button" >Update Customer</button>  -->
+        <button  class="btn btn-success" type="submit" >Update Customer</button>
+    </form>
+</div>

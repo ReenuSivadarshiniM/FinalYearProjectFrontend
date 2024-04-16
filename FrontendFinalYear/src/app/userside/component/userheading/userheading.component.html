@@ -22,7 +22,10 @@
           <button *ngIf="!checkUserLogin()" class="btn btn-outline-black my-2 my-sm-0" (click)="login()">Login</button>
           <button *ngIf="!checkUserLogin()" class="btn btn-outline-black my-2 my-sm-0" (click)="register()">Register</button>
           <button *ngIf="checkUserLogin()" class="btn btn-outline-black my-2 my-sm-0" (click)="profile()">Profile</button>
-          <button *ngIf="checkUserLogin()" class="btn btn-outline-black my-2 my-sm-0" (click)="logout()">Logout</button>
+          <a href="https://reenusivadarshini-chat-streamlit-ur01z7.streamlit.app/" >
+            <button>Go to Chatbot</button>
+          </a>
+                    <button *ngIf="checkUserLogin()" class="btn btn-outline-black my-2 my-sm-0" (click)="logout()">Logout</button>
 
         </form>
       </nav>

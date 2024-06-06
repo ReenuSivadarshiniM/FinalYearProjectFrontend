@@ -1,0 +1,62 @@
+<app-userheading></app-userheading>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-4">
+            <img [src]="updateCars.url" alt="Car Image">
+        </div>
+        <div class="col-lg-4">
+            <h2 style="margin-left: 25%;">Doctor Details</h2>
+            <table class="carTable">
+                <tr>
+                    <td class="carstd"><b>Doctor Name</b></td>
+                    <td class="carstd">{{updateCars.doctorName}}</td>
+                </tr>
+                <tr>
+                    <td class="carstd"><b>Email</b></td>
+                    <td class="carstd">{{updateCars.doctorEmail}}</td>
+                </tr>
+                <tr>
+                    <td class="carstd"><b>Fees</b></td>
+                    <td class="carstd">{{updateCars.doctorFees}}</td>
+                </tr>
+                <tr>
+                    <td class="carstd"><b>Phone Number</b></td>
+                    <td class="carstd">{{updateCars.doctorPhoneNo}}</td>
+                </tr>
+                <tr>
+                    <td class="carstd"><b>Address</b></td>
+                    <td class="carstd">{{updateCars.address}}</td>
+                </tr>
+                
+            </table>
+        </div>
+    </div>
+    <div class="row col-lg-4" id="btn">
+        <button class="btn btn-primary" (click)="booking(updateCars.doctorName)">Book Now!</button>
+    </div>
+</div>
+<div style="color:black ; padding: 10px; margin-top: 2%; margin-bottom: 2%;">
+    <h2 style="margin-left: 40%;">View Doctor Ratings</h2>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-3" *ngFor="let ratin of ratingOfCustomer">
+      <div class="card">
+        <div class="card-body" >
+          <h5 class="card-title" style="color: black;"><b>Anonymous User</b></h5>
+          <p class="card-text">Comments: {{ratin.comments}}</p>
+          <p class="card-text">Ratings: {{ratin.ratingStars}}/5</p>
+         <!-- / <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+    </div>
+</div>
+
+  <div class="row " id="btn">
+    <button class="btn btn-primary" style="margin-left: 45%;" (click)="ratenow(updateCars.doctorName)">Rate Now!</button>
+</div>
+
+

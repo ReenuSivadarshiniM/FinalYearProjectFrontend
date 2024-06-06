@@ -1,0 +1,35 @@
+/* .card-group{
+    display: flex;
+}
+img{
+    height: 230;
+    width: 180;
+
+} */
+.card{
+    margin-right: auto;
+    margin-bottom: 20px;
+    display: flex;
+    height: 490px;
+    
+    }
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2%;
+    
+}
+input{
+    height: 30px;
+    width: 200px;
+}
+.chart{
+    justify-content: center;
+    align-items: center;
+    margin-left: 25%;
+}
+
+body{
+    background-color: #EEEEEE;
+}

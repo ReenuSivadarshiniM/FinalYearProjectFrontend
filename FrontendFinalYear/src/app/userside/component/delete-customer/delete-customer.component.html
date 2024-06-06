@@ -1,0 +1,15 @@
+ <p>delete-customer works!</p>
+<!-- <form>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="customerEmail" required>
+        <button  (click)="deleteCustomer()">Submit</button>
+    </div>
+</form>  -->
+
+ <div *ngIf="message" class="alert alert-success">
+    <p> {{message}}</p>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+    <p> {{errorMessage}}</p>
+</div> 

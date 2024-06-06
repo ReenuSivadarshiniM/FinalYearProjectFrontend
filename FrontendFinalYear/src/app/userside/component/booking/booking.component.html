@@ -1,0 +1,72 @@
+<app-userheading></app-userheading>
+    <div id="bgimg" class="col-lg">
+        <div *ngIf="message" class="alert alert-success">
+            <h3>{{message}}</h3>
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            <h3>{{errorMessage}}</h3>
+        </div>
+        <div style="display: flex;justify-content: center;"><h2><i>Book your Appoinment Now!</i></h2></div>
+        <form action="">
+            <table>
+                <!-- <tr>
+                    <td><label for="">Email Id</label></td>
+                    <td><input type="email" name="email" id="email" [(ngModel)]="newBooking.customerEmailId"
+                            #emailRef="ngModel" pattern="^[a-z0-9]{3,}@[a-z]{3,5}.[a-z]{2,3}$" required></td>
+                </tr>
+                <th colspan="2">
+                    <div *ngIf="emailRef.invalid && (emailRef.touched || emailRef.dirty)">
+                        <p *ngIf="emailRef.errors?.['required']" class="text-danger">Email is Mandatory, can't be blank
+                        </p>
+                        <p *ngIf="emailRef.errors?.['pattern']" class="text-danger">Please provide a valid email id</p>
+                    </div>
+                </th> -->
+                <tr>
+                    <td><label for="">Doctor Name </label></td>
+                    <td><input type="text" name="modelname" id="modelname" [value]="modelName" readonly></td>
+                </tr>
+                <!-- <th colspan="2">
+                    <div *ngIf="modelNameRef.invalid && (modelNameRef.touched || modelNameRef.dirty)">
+                        <p *ngIf="modelNameRef.errors?.['required']" class="text-danger">Car Model Name is Mandatory,
+                            can't be blank</p>
+                        <p *ngIf="modelNameRef.errors?.['pattern']" class="text-danger">Please provide a valid model
+                            name</p>
+                    </div>
+                </th> -->
+                <tr>
+                    <td><label for="">Slot number</label></td>
+                    <td>
+                        <select name="slot" id="slot" [(ngModel)]="newBooking.slotNo">
+                            <option value="1">Slot 1 (9.00 AM - 10.00 AM)</option>
+                            <option value="2">Slot 2 (10.00 AM - 11.00 AM)</option>
+                            <option value="3">Slot 3 (11.00 AM - 12.00 PM)</option>
+                            <option value="4">Slot 4 (2.00 PM - 3.00 PM)</option>
+                            <option value="5">Slot 5 (3.00 AM - 4.00 PM)</option>
+                            <option value="6">Slot 6 (4.00 AM - 5.00 PM)</option>
+                            <option value="7">Slot 7 (5.00 AM - 6.00 PM)</option>
+                            <option value="8">Slot 8 (6.00 AM - 7.00 AM)</option>
+                          </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="">Appoinment Date</label></td>
+                    <td><input type="date" name="date" id="date" [(ngModel)]="newBooking.date" #date="ngModel" required>
+                    </td>
+                </tr>
+                <th colspan="2">
+                    <div *ngIf="date.invalid && (date.touched || date.dirty)">
+                        <p *ngIf="date.errors?.['required']" class="text-danger">Car Booking Date is Mandatory, can't be
+                            blank</p>
+                    </div>
+                </th>
+                <tr>
+                    <td><label for="">Booking done Date</label></td>
+                    <td><input type="date" name="bookingdate" id="bookingdate" [valueAsDate]="todaydate"
+                            title="Oops! This is readonly, you can't edit">
+                </tr>
+            </table>
+            <button class="btn btn-primary" (click)="createBooking()" style="justify-content: center; align-items: center;margin-left: 35%;">Book</button>
+            <button class="btn btn-warning" type="reset" style="margin-left: 3%;">Cancel</button>
+        </form>
+
+</div>

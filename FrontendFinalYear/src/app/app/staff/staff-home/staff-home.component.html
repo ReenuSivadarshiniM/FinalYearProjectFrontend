@@ -1,0 +1,48 @@
+<body>
+<div>
+    <nav>
+        <ul>
+            <li>
+                <a href="http://localhost:4200/staff-home">Home</a>
+            </li>
+            <li>
+                <a href="http://localhost:4200/staff-profile">Profile</a>
+            </li> 
+            <li>
+                <a href="http://localhost:4200/stafflogin" (click)="logout()">Logout</a> 
+             </li>
+        </ul>
+    </nav>
+<div>
+    <br>
+<div *ngIf="message" class="alert alert-success"><h4 >{{message}}</h4></div>
+<div *ngIf="errorMessage" class="alert alert-danger"><h4>{{errorMessage}}</h4></div>
+<div class="bg">
+    <h1>All bookings</h1>
+    <table *ngIf="bookings.length>0" class="table">
+        <thead>
+            <tr>
+                <th>Book Id</th>
+                <th>Customer EmailId</th>
+                <th>Car Model Name</th>
+                <th>Slot No</th>
+                <th>Test Drive Booking Date</th>
+                <th>Booking Date</th>
+                <th>Status</th>
+                <!-- <th>Cancellation</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bookings of bookings">
+                <td>{{bookings.bookId}}</td>
+                <td>{{bookings.customerEmailId}}</td>
+                <td>{{bookings.carModelName}}</td>
+                <td>{{bookings.slotNo}}</td>
+                <td>{{bookings.date}}</td>
+                <td>{{bookings.bookingDate}}</td>
+                <td><button class="btn btn-success" [disabled]="clicked"   (click)="completeClick(bookings.bookId); clicked = true;">Completed</button></td>
+                <!-- <td><button class="btn btn-danger">Not Completed</button></td>  -->
+             </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,14 @@
+body{
+    background-color: azure;
+  }
+#message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  input{
+    margin-left: 1%;
+  }
+  th{
+    text-align: center;
+  }

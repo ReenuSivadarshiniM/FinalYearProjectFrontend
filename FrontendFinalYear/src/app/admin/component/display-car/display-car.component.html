@@ -1,0 +1,44 @@
+<app-header></app-header>
+<body>
+    <h4>Car Details:</h4>
+    <div>
+        <h3 *ngIf="car.length <1" class="alert alert-danger"> No Cars Found.</h3>
+        <div *ngIf = "message" class="alert alert-danger" id="message">
+            {{message}}
+        </div>
+        <div *ngIf = "errorMessage" class="alert alert-danger" id="message">
+            {{errorMessage}}
+        </div>
+        Search:<input type="text" id="search" name="search" [(ngModel)]="query" placeholder="Seach">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Filter by price:<input type="text" id="search" name="search" [(ngModel)]="minprice" placeholder="Min price">
+        <input type="text" id="search" name="search" [(ngModel)]="maxprice" placeholder="Max price"><br><br>
+        <table *ngIf="car.length>0" class="table table-bordered">
+            <thead class="table-dark"> 
+                <tr>
+                    <th>Doctor id</th>
+                    <th>Doctor Name</th>
+                    <th>Image</th>
+                    <th>Doctor Email</th>
+                    <th>Doctor Fees</th>
+                    <th>Doctor Phone No.</th>
+                    <th>Address</th>
+                    
+                </tr>
+            </thead>
+            <tbody class="table-light">
+                <tr *ngFor="let c of car  | filter:query | filterPrice:minprice:maxprice">
+                    <td>{{c.doctorId}}</td>
+                    <td>{{c.doctorName}}</td>
+                    <td><img [src]="c.url" style="height: 100px;width: 160px;" alt="doctor"></td>
+                    <td>{{c.doctorEmail}}</td>
+                    <td>{{c.doctorFees}}</td>
+                    <td>{{c.doctorPhoneNo}}</td>
+                    <td>{{c.address}}</td>
+                 
+                   
+                </tr> 
+            </tbody>
+        </table>
+    </div>
+</body>
+

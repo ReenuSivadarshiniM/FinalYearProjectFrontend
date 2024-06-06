@@ -1,0 +1,32 @@
+<app-userheading></app-userheading>
+<h2>My Ratings </h2>
+  <!-- <label for="emailId">Enter Email Id</label>
+  <input type="text" id="emailId" name="emailId" [(ngModel)]="emailId"><br>
+<button (click)="getRatingByCustomerMail(emailId)"> Enter</button> -->
+
+
+  <table *ngIf="ratingOfCustomer.length>0">
+          <thead>
+           <th>Customer EmailId</th>
+           <!-- <th>Rating Id</th> -->
+           <th>Doctor Name</th>
+           <th>Rating Stars</th>
+           <th>Comments</th>
+           
+           
+           </thead>
+          <tbody>
+            <tr *ngFor="let ratin of ratingOfCustomer" >
+            <td>{{ratin.customerEmailId}}</td>
+            <td>{{ratin.carModelName}}</td>
+            <!-- <td>{{ratin.ratingId}}</td> -->
+            <td>{{ratin.ratingStars}}</td>
+            <td>{{ratin.comments}}</td>
+            
+            <!-- <td> <button (click)="deleteRatingById(ratin.ratingId)" class="btn btn-danger">Delete</button></td> -->
+
+              </tr>
+          </tbody>
+      </table>
+
+<br>

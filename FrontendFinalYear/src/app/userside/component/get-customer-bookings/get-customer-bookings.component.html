@@ -1,0 +1,41 @@
+<app-userheading></app-userheading>
+<form>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="customerEmail" required>
+        <button  (click)="getCustomerBookings()">Submit</button>
+    </div>
+</form>
+
+<div>
+    <h3>Display  Customers Booking details: </h3>
+    <!-- <h3 *ngIf="customer.length <1" class="table"> No accounts Found.</h3> -->
+    <table >
+        <thead>
+            <tr>
+                
+                <th>Name</th>
+                <th>Mobile Number</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr >
+             
+                <td>{{customer.customerName}}</td>
+                <td>{{customer.mobileNumber}}</td>
+                <td>{{customer.address}}</td>
+                <td>{{customer.customerEmail}}</td>
+                <td>{{customer.password}}</td>
+               
+                <!-- <td><button (click)="deleteCustomer(customers.customerEmail)" class="btn btn-danger">Delete</button></td>  
+                <td><button (click)="updateCustomer(customers)" class="btn btn-warning">Update</button></td>  -->
+                <!-- <td><button (click)="getCustomerBookings(customers.customerEmail)" class="btn btn-warning">Get</button></td> 
+                <td><button (click)="getCustomerByEmail(customers.customerEmail)" class="btn btn-warning">Get Customer details</button></td>  -->
+            </tr> 
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,35 @@
+<body>
+<div>
+<h3 *ngIf="staff.length <1" class="alert alert-danger"> No staffs Found.</h3>
+<div *ngIf = "message" class="alert alert-danger" id="message">
+{{message}}
+</div>
+<div *ngIf = "errorMessage" class="alert alert-danger" id="message">
+{{errorMessage}}
+</div>
+<table *ngIf="staff.length>0" class="table table-bordered"> 
+<thead class="table-dark">
+<tr>
+<th>Staff Id</th>
+<th>Staff Name</th>
+<th>Phone Number</th>
+<th>Staff Email</th>
+<th>Car Model Name</th>
+<th>Delete</th>
+</tr>
+</thead>
+<tbody class="table-light">
+<ng-container *ngFor="let s of staff">
+    <tr>
+<td>{{s.staffId}}</td>
+<td>{{s.staffName}}</td>
+<td>{{s.phoneNumber}}</td>
+<td>{{s.staffEmail}}</td>
+<td>{{s.modelName}}</td>
+<td><button (click)="onDeleteAccount(s.staffId)" class="btn btn-danger">Delete</button></td>
+</tr>
+</ng-container>
+</tbody>
+</table>
+</div>
+</body>

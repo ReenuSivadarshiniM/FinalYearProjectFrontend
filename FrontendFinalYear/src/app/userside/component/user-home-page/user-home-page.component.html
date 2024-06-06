@@ -1,0 +1,53 @@
+<app-userheading></app-userheading>
+
+<body>
+    <!-- <h3 *ngIf="car.length <1" class="alert alert-danger"> No Cars Found.</h3> -->
+    
+    <!-- <div class="pic-ctn">
+        <img src="https://th.bing.com/th/id/R.52b5d1124e8e265312d1e8e1a4ecbed8?rik=UPxk2ORHkFvbXw&riu=http%3a%2f%2fwww.hdcarwallpapers.com%2fwalls%2f2018_hyundai_kona_4k_4-HD.jpg&ehk=staTf9QLGTLRgOoY2WXIa2EP7a2mn080XvAt8ejYXgI%3d&risl=1&pid=ImgRaw&r=0" alt="" class="pic">
+        <img src="https://th.bing.com/th/id/R.52b5d1124e8e265312d1e8e1a4ecbed8?rik=UPxk2ORHkFvbXw&riu=http%3a%2f%2fwww.hdcarwallpapers.com%2fwalls%2f2018_hyundai_kona_4k_4-HD.jpg&ehk=staTf9QLGTLRgOoY2WXIa2EP7a2mn080XvAt8ejYXgI%3d&risl=1&pid=ImgRaw&r=0" alt="" class="pic">
+        <img src="https://th.bing.com/th/id/R.52b5d1124e8e265312d1e8e1a4ecbed8?rik=UPxk2ORHkFvbXw&riu=http%3a%2f%2fwww.hdcarwallpapers.com%2fwalls%2f2018_hyundai_kona_4k_4-HD.jpg&ehk=staTf9QLGTLRgOoY2WXIa2EP7a2mn080XvAt8ejYXgI%3d&risl=1&pid=ImgRaw&r=0" alt="" class="pic">
+        <img src="https://th.bing.com/th/id/R.52b5d1124e8e265312d1e8e1a4ecbed8?rik=UPxk2ORHkFvbXw&riu=http%3a%2f%2fwww.hdcarwallpapers.com%2fwalls%2f2018_hyundai_kona_4k_4-HD.jpg&ehk=staTf9QLGTLRgOoY2WXIa2EP7a2mn080XvAt8ejYXgI%3d&risl=1&pid=ImgRaw&r=0" alt="" class="pic">
+        <img src="https://th.bing.com/th/id/R.52b5d1124e8e265312d1e8e1a4ecbed8?rik=UPxk2ORHkFvbXw&riu=http%3a%2f%2fwww.hdcarwallpapers.com%2fwalls%2f2018_hyundai_kona_4k_4-HD.jpg&ehk=staTf9QLGTLRgOoY2WXIa2EP7a2mn080XvAt8ejYXgI%3d&risl=1&pid=ImgRaw&r=0" alt="" class="pic">
+      </div> -->
+
+      <a href="https://reenusivadarshini-chat-streamlit-ur01z7.streamlit.app/" >
+        <button>Go to Chatbot</button>
+      </a>
+
+    <div class="container">
+        <div class="row"  >
+            <div>
+                <input type="text" id="search" name="search" [(ngModel)]="query" placeholder="Search for Doctors here"><br><br>
+            </div>
+            <div class="col-sm-12">
+                <div *ngFor="let c of car | filter:query" class="card col-sm-4">
+                    <img class="card-img-top"
+                        [src]="c.url"  alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title"><b>{{c.doctorName}}</b></h3>
+                        <p class="card-text">{{c.doctorPhoneNo}}</p>
+                        <p class="card-text">{{c.url}}</p>
+                        <!-- <p class="card-text"><small class="text-muted">⭐⭐⭐⭐</small></p> -->
+                    </div>
+                    <div class="card-body">
+                        <button class="card-link btn btn-dark" (click)="carDetails(c.doctorName)">Details</button>
+                        <button class="card-link btn btn-primary" (click)="createBooking(c.doctorName)">Book Now</button>
+                        <button class="card-link btn btn-dark" (click)="addRating(c.doctorName)">Rate Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    
+
+    </div>
+    <!-- <div>
+        <app-footer></app-footer>
+    </div> -->
+    
+    
+    
+
+</body>

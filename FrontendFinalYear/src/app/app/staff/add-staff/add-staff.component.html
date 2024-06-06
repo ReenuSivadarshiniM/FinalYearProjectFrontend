@@ -1,0 +1,43 @@
+<body>
+    <div *ngIf="message" class="alert alert-success" id="message">
+        {{message}}
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger" id="message">
+        {{errorMessage}}
+    </div>
+    <div class="forms">
+        <form class="form-group">
+            <label for="name">Name:</label><br>
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="newStaff.staffName" #nameRef="ngModel" pattern="[A-Za-z ]{3,}" required>
+            <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+                <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required ,but it is blank</p>
+                <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name does not match with pattern</p>
+            </div>
+            <label for="mobileNumber">Mobile Number:</label>
+            <input type="text" name="mobileNumber" id="mobileNumber" class="form-control" [(ngModel)]="newStaff.phoneNumber"
+                #mobileNumberRef="ngModel" pattern="[0-9]{10}" required>
+            <div *ngIf="mobileNumberRef.invalid && (mobileNumberRef.touched || mobileNumberRef.dirty)">
+                <p *ngIf="mobileNumberRef.errors?.['required']" class="text-danger">mobileNumber is required ,but it is
+                    blank</p>
+                <p *ngIf="mobileNumberRef.errors?.['pattern']" class="text-danger">mobileNumber should be of length 10</p>
+            </div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" class="form-control" [(ngModel)]="newStaff.staffEmail" #emailRef="ngModel"
+                pattern="[A-Za-z0-9._]{3,}[@A-Za-z]{3,}.[a-z]{2,3}" required>
+            <div *ngIf="emailRef.invalid && (emailRef.touched || emailRef.dirty)">
+                <p *ngIf="emailRef.errors?.['required']" class="text-danger">Email is required ,but it is blank</p>
+                <p *ngIf="emailRef.errors?.['pattern']" class="text-danger">Email is not valid </p>
+            </div>
+            <label for="modelName">Car Model:</label>
+        <input type="text" id="modelName" name="modelName" class="form-control" [(ngModel)] = "newStaff.modelName" #modelNameRef="ngModel" pattern="[A-Za-z]{3,}" required>
+        <div *ngIf="modelNameRef.invalid && (modelNameRef.touched || modelNameRef.dirty) && validation == true">
+            <p *ngIf="modelNameRef.errors?.['required']" class="text-danger">This is a mandotary field!</p>
+            <p *ngIf="modelNameRef.errors?.['pattern']" class="text-danger">Only characters allowed with min length of 3</p>
+        </div>
+            <div class="button">
+                <button (click)="createStaff()" class="btn btn-success" type="submit">Submit</button> &nbsp;
+                <button class="btn btn-danger" type="Reset">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>

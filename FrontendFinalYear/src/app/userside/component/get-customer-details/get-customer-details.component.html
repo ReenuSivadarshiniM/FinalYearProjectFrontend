@@ -1,0 +1,38 @@
+<app-userheading></app-userheading>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3><i>MY DETAILS</i></h3>
+
+            <table>
+                <tr>
+                    <td><b>NAME</b></td>
+                    <td>{{customers.customerName}}</td>
+                </tr>
+                <tr>
+                    <td><b>MOBILE NUMBER</b></td>
+                    <td>{{customers.mobileNumber}}</td>
+                </tr>
+                <tr>
+                    <td><b>ADDRESS</b></td>
+                    <td>{{customers.address}}</td>
+                </tr>
+                <tr>
+                    <td><b>EMAIL</b></td>
+                    <td>{{customers.customerEmail}}</td>
+                </tr>
+            </table>
+                <div class="button">
+                    <!-- <button (click)="deleteCustomer(customer.customerEmail)" class="btn btn-danger">Delete</button>   -->
+                  <button (click)="updateCustomer(customers)" class="btn btn-warning" style="margin-left: 2%;">Edit</button>
+                  <button (click)="viewMyBookings(customers.customerEmail)" class="btn btn-primary" style="margin-left: 2%;">View my Bookings</button>
+                  <button (click)="viewMyRatings()" class="btn btn-primary" style="margin-left: 2%;">View my Ratings</button>
+                </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
+
+ 
